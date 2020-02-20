@@ -11,20 +11,17 @@ def recipe_batches(recipe, ingredients):
 
   # use a for loop to extract the ingredients from the recipe
     for ingredient, amount in recipe.items():
-        print(ingredient, amount)
-        # and check if its ingredients is/is not in ingredients(2nd arg)
+       # and check if its ingredients is/is not in ingredients(2nd arg)
         if ingredient not in ingredients:
             # return 0 if not in
             return 0
   # ratio should be ingredients[i]/amout (of recipe)
-        ratio = math.floor(ingredients[ingredient] / amount)
-        print(ratio, ingredients[ingredient])
+        ratio = ingredients[ingredient] // amount
 
   # compare min_ratio to the ingredient/amount ratio if ratio is less than min_ratio
         if ratio < min_ratio:
             # set min_ratio to current ratio
             min_ratio = ratio
-            print(min_ratio)
 
  # return min_ratio
     return min_ratio
